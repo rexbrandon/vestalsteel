@@ -1,0 +1,1074 @@
+// can create variables with $variable: #fff; and apply it globally
+
+/*
+CAN NEST 
+header {
+    background: #fff;
+    button {
+        color: #333;
+        &:hover {
+            background: red;
+        }
+    }
+}
+
+CAN IMPORT OTHER SCSS files
+
+@import "./header";
+
+just name the file in the styles folder _header.scss
+
+CAN REUSE VARIABLES
+
+@mixin flex-center($direction, $background) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+    background: $background;
+}
+
+header {
+    @include flex-center(column, red);
+}
+
+TO EXTEND OR REUSE STYLES
+
+.contact {
+    @extend header;
+}
+
+*/
+
+// SITE COLORS
+$backGroundDark: #EFEFEF;
+$backGroundLight: #fbfcfe;
+$headerTextDark: #A9A9A9;
+$mainTextDark: #505050;
+$darkerText: #303030;
+$emphasisDark: #FF3B3F;
+$emphasisBright: #CAEBF2;
+$superdarkBlue: #081726;
+$darkBlue: #13375c;
+$deepBlue: #005cb9;
+
+// PADDING DEFAULTS
+$standardPadding: 20px;
+
+// mixins (groups css declarations)
+@mixin nav-links-setup {
+    padding: 14px 16px;
+    margin-left: 10%;
+    text-decoration: none;
+    list-style: none;
+    display: block;
+}
+@mixin centerObj {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+@mixin mobileNavBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 26px;
+}
+@mixin divBackground($backgroundGradient, $backgroundImage) {
+    width: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: $backgroundGradient, $backgroundImage;
+}
+@mixin mobileBtnSetup($borderColor, $backgroundColor, $textColor) {
+    width: 175px;
+    padding: 12px 7px;
+    text-align: center;
+    border: 2px solid $borderColor;
+    background: $backgroundColor;
+    border-radius: 3px;
+    color: $textColor;
+    text-decoration: none;
+    font-size: 20px;
+}
+// bigger line
+@mixin line-0 {
+    width: 200px;
+    height: 1px;
+}
+//smaller line
+@mixin line-1{
+    width: 150px;
+    height: 1px;
+}
+// big line ;)
+@mixin line-2{
+    width: 80%;
+    height: 1px;
+}
+// PAGE HEADER BOX 
+@mixin headerBox($background) {
+    width: 100%;
+    height: 250px;
+    background: $background;
+}
+// PAGE HEADER BOX TITLE
+@mixin headerBoxText ($textColor) {
+    color: $textColor;
+    font-weight: 500;
+    text-align: center;
+    line-height: 250px;
+}
+// EXPAND BTN FOR PORTFOLIO
+@mixin portfolioBtn ($textColor, $bckgroundColor) {
+    width: 70%;
+    margin: 10px 0px;
+    @include centerObj();
+    padding: 7px 5px;
+    border: none;
+    box-shadow: 3px 3px 0px 0px $darkBlue;
+    color: $textColor;
+    background: $bckgroundColor;
+}
+// open sans font import
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+* {
+    background-color: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+.main-container {
+    background-color: $backGroundDark;
+    width: 100%;
+}
+// giving all of the content containers the same padding (20px)
+.head-container, .slideshow-container, .services-container, .faqs-container, .about-container, .staff-container-4-grid, .directions-container {
+    padding: $standardPadding;
+    width: auto;
+}
+// Rules for global classes
+.container-title{
+    color: $darkBlue;
+    font-weight: 400;
+    font-size: 22px;
+    @media screen and (min-width:700px) {
+        font-size: 28px;
+    }
+}
+.line-0-blue{
+    @include line-0();
+    background: $darkBlue;
+    margin: 0px 0px 5px 10px;
+}
+.line-0-white{
+    @include line-0();
+    background: $backGroundLight;
+    margin: 0px 0px 5px 10px;
+}
+.line-1-blue{
+    @include line-1();
+    background: $darkBlue;
+    margin: 5px 0px 5px 10px;
+}
+.line-1-white{
+    @include line-1();
+    background: $backGroundLight;
+    margin: 0px 0px 5px 10px;
+}
+.line-2-blue{
+    @include line-2();
+    @include centerObj();
+    background: $emphasisBright;
+}
+.line-2-deepBlue{
+    @include line-2();
+    @include centerObj();
+    background: $deepBlue;
+}
+.line-3-white{
+    @include line-2();
+    @include centerObj();
+    background: $backGroundLight
+}
+// color and style for nav box
+//rules for primary nav
+// HOME PAGE RULES
+.mobile-navigation {
+    width: 100%;
+    background: none;
+    height: 50px;
+    position: absolute;   
+    padding-top: 15px;
+    top: 0;
+    z-index: 10;
+    @media screen and (min-width: 1000px) {
+        display: none;
+    }
+    img{
+        width: 50px;
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    .overlay{
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        background-color: $backGroundLight;
+        overflow-x: hidden; // Disable horizontal scroll
+        transition: .4s;
+        li{
+            font-size: 20px;
+            color: $mainTextDark;
+            &:hover{
+                color: $emphasisDark;
+            }
+        }
+        .menu-line {
+            width: 80%;
+            height: 1px;
+            @include centerObj();
+            margin-top: 10px;
+            background-color: $mainTextDark;
+        }
+        .closebtn{
+            @include mobileNavBtn();
+            text-decoration: none;
+            color: $mainTextDark;
+        }
+        img{
+            width: 50px;
+            display: block;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+        .mobileNav {
+            padding: 0;
+            width: 100%;
+            text-align: left;
+            margin-top: 50%; // avoids contact with close button on smaller screens
+            a {
+                color: $mainTextDark;
+                @include nav-links-setup();
+            }
+        }
+    }
+    .openbtn{
+        @include mobileNavBtn();
+        color: $backGroundLight;
+    }  
+}
+.mobile-navigation-2{
+    @extend .mobile-navigation;
+    background: $backGroundLight;
+    position: relative;
+    height: 60px;
+    .openbtn{
+        color: $darkBlue;
+    }
+}
+
+// END OF MOBILE NAV
+//---------------------
+// START OF DESKTOP NAV
+.desktop-navigation{
+    display: none;
+    position: relative;
+    background: $deepBlue;
+    justify-content: flex-end;
+    height: 100px;
+    width: 100%;
+    .desktop-nav{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 30px;
+        li{
+            padding: 0px 20px;
+            list-style: none;
+            a{
+                text-decoration: none;
+                color: $backGroundLight;
+                font-size: 20px;
+                &:hover{
+                    color: #fff;
+                }
+            }
+        }
+    }
+    img{
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        width: 70px;
+    }
+    @media screen and (min-width: 1000px) {
+        display: flex;
+    }
+}
+
+// homepage header
+.head-container {
+    @include divBackground(linear-gradient(to bottom, rgba(239, 239, 239, 0.1), rgba(239, 239, 239, 0.1)), url("/static/main/img/assets/header-pic2.jpg"));
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    background-position: right;
+    .header-cta-box{
+        width: 90%;
+        position: relative;
+        height: 300px;
+        top: 25%;
+        @include centerObj();
+        @media screen and (min-width:700px) {
+            float: right;
+            margin-right: 5%;
+        }
+        .header-cta-primary, .header-cta-secondary{
+            font-weight: 500;
+            font-size: 30px;
+            @media  screen and (min-width:700px) {
+                font-size: 35px;
+                text-align: right;
+            }
+        }
+        .header-cta-primary{
+            color: $backGroundLight;
+        }
+        .header-cta-secondary{
+            color: $backGroundLight
+        }
+        a{
+            color: $deepBlue;
+            background: $backGroundLight;
+            border-radius: 3px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            position: relative;
+            padding: 7px 10px;
+            top: 20px;
+            @media screen and (min-width:700px) {
+                float: right;
+                font-size: 24px;
+            }
+        }
+    }
+}
+// client portfolio
+
+.client-overview{
+    height: auto;
+    padding: 60px 0px 80px;
+    background: $deepBlue;
+    @media screen and (min-width: 1200px) {
+        padding: 100px 0px 140px;
+    }
+    .client-heading{
+        margin-left: 10%;
+        color: $backGroundLight;
+        padding-bottom: 20px;
+        font-weight: 400;
+        font-size: 28px;
+    }
+    .client-intro{
+        max-width: 500px;
+        margin-left: 10%;
+        margin-right: 20px;
+        padding-bottom: 60px;
+        color: $backGroundLight;
+        font-size: 22px;
+        font-weight: 300;
+    }
+    .client-list{
+        background: $backGroundLight;
+        width: 90%;
+        max-width: 1200px;
+        border-radius: 5px;
+        @include centerObj();
+        padding: 40px 0px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: stretch;
+        align-items: center;
+        .client{
+            list-style: none;
+            padding: 0px 15px;
+        }
+        .square{
+            width: 80px;
+            @media screen and (min-width: 700px) {
+                width: 140px;
+            }
+        }
+        .rectangle{
+            width: 120px;
+            @media screen and (min-width: 700px) {
+                width: 180px;
+            }
+        }
+    }
+}
+
+// END 
+//END FNA
+
+// main page services container
+.services-container {
+    height: auto;
+    background: $backGroundDark;
+    position: relative;
+    margin: 0;
+    padding: 80px 0px 80px;
+    @media screen and (min-width:700px) {
+        padding: 70px 0px 100px;
+    }
+    .services-heading{
+        margin-left: 10%;
+        color: $deepBlue;
+        padding-bottom: 20px;
+        font-weight: 400;
+        font-size: 28px;
+    }
+    .services-intro{
+        max-width: 500px;
+        margin-left: 10%;
+        margin-right: 20px;
+        padding-bottom: 60px;
+        color: $deepBlue;
+        font-size: 22px;
+        font-weight: 300;
+    }
+    // services main css rules
+    .services-boxs{
+        padding: 0px 20px;
+        .left-third, .middle-third, .right-third{
+            height: auto;
+            width: 80%;
+            padding: 40px 20px;
+            margin: 40px 0px;
+            @include centerObj();
+            background: $backGroundLight;
+            .service-img, .info-btn{
+                display: block;
+            }
+            .info-btn {
+                @include centerObj();
+                @include mobileBtnSetup(none, $deepBlue, $backGroundLight);
+                margin-top: 20px;
+            }
+            .service-img{
+                width: 175px;
+                padding: 50px 0px;
+                @include centerObj();
+            }
+        }
+        @media screen and (min-width: 800px) {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            align-content: space-around;
+            .left-third, .middle-third, .right-third{
+                width: 300px;
+                .info-btn{
+                    @include centerObj();
+                    width: 175px;
+                    font-size: 28px;
+                }
+            }
+        }
+    }
+        // shape divider
+    .custom-shape-divider-top-1623446036 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+
+    .custom-shape-divider-top-1623446036 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 56px;
+    }
+
+    .custom-shape-divider-top-1623446036 .shape-fill {
+        fill: $deepBlue;
+}
+}
+//footer 
+.footer-main{
+    height: auto;
+    padding: 80px 0px 80px;
+    background: $deepBlue;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    align-content: space-around;
+    @media screen and (max-width: 1030px) {
+        flex-direction: column;
+    }
+    .footer-col-1, .footer-col-2, .footer-col-3{
+        min-width: 300px;
+        margin: 30px 20px;
+        .footer-heading{
+            color: $backGroundLight;
+            font-size: 22px;
+            padding: 10px 15px;
+        }
+    }
+    .footer-list-main{
+        list-style: none;
+        margin: 10px 15px;
+        li a{
+            color: $backGroundLight;
+            text-decoration: none;
+            font-size: 20px;
+        }
+    }
+    img{
+        width: 80px;
+        margin-left: 20px;
+    }
+    p{
+        color: $backGroundLight;
+        margin: 10px 15px;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    a{
+        color: $backGroundLight;
+        text-decoration: none;
+        padding-left: 10px;
+        font-size: 20px;
+    }
+    i{
+        color: $backGroundLight;
+        margin-top: 5px;
+    }
+}
+.footer-main-2{
+    @extend .footer-main;
+    background: $backGroundLight;
+    .footer-col-1, .footer-col-2, .footer-col-3{
+        .footer-heading{
+            color: $darkBlue;
+        }
+    }
+    .footer-list-main{
+        li a{
+            color: $darkBlue;
+        }
+    }
+    p, a, i{
+        color: $darkBlue;
+    }
+}
+// END OF HOME PAGE
+// START OF SERVICES PAGE
+.services-page-container{
+    height: auto;
+    background: $backGroundLight;
+    .container-header-box-services{
+        @include headerBox($deepBlue);
+        .container-title{
+            @include headerBoxText($backGroundLight);
+        }
+    }
+    .quick-links{
+        width: 95%;
+        height: auto;
+        padding: 15px 10px;
+        border-bottom: 1px solid $emphasisBright;
+        display: inline-flex;
+        justify-content: center;
+        overflow-x: scroll;
+        white-space: nowrap;
+        @media screen and (min-width: 1000px){
+            display: none;
+        }
+        li{
+            list-style: none;
+            text-transform: uppercase;
+            padding: 0px 10px;
+            a{
+                text-decoration: none;
+                color: $darkBlue;
+            }
+        }
+    }
+    .left-third, .middle-third, .right-third{
+        width: 90%;
+        height: auto;
+        padding: 20px 10px;
+        margin: 0px 0px;
+        @include centerObj();
+        .service{
+            font-weight: 300;
+            text-transform: uppercase;
+            color: $darkBlue;
+            padding-bottom: 5px;
+            text-align: center;
+        }
+        .service-description{
+            color: $mainTextDark;
+            text-align: justify;
+            padding: 10px 20px;
+            font-weight: 300;
+        }
+        .service-icons{
+            width: 90%;
+            height: auto;
+            margin: 20px 0px;
+            @include centerObj();
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            flex-flow: wrap;
+            .icon{
+                width: 30px;
+                padding: 13px;
+            }
+            .left, .middle, .right{
+                border-radius: 5px;
+            }
+            .left{
+                background: $emphasisBright;
+                border: solid 1px $darkBlue;
+            }
+            .middle{
+                background: $backGroundDark;
+                border: solid 1px $deepBlue;
+            }
+            .right{
+                background: $headerTextDark;
+                border: solid 1px $darkBlue;
+            }
+        }
+        .service-cta{
+            @include centerObj();
+            @include mobileBtnSetup($deepBlue, $deepBlue, $backGroundLight);
+            margin-top: 20px;
+            margin-bottom: 50px;
+            width: 70%;
+        }
+        .service-img{
+            width: 90%;
+            padding: 10px 0px;
+            @include centerObj();
+        }
+    }
+    .main-services{
+        @media screen and (min-width: 800px) {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            align-content: space-around;
+            padding: 60px 0px;
+            .left-third, .middle-third, .right-third{
+                width: 350px;
+                .service-cta{
+                    display: none;
+                }
+                .line-2-blue{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+#additionalCapabilities{
+    padding: 20px 10px 40px; 
+    background: $deepBlue;
+    .capabilities-header{
+        text-align: center;
+        h2{
+            color: $backGroundLight;
+            font-weight: 400;
+            padding-bottom: 10px;
+            margin: 0px 20px 30px;
+            border-bottom: 1px solid $backGroundLight;
+            max-width: 900px;
+            @include centerObj();
+        }
+    }
+    .capabilities{
+        text-align: center;
+        background: $backGroundLight;
+        padding: 40px 10px;
+        width: 90%;
+        max-width: 900px;
+        @include centerObj();
+        li{
+            color: $mainTextDark;
+            list-style: none;
+            padding: 0px 10px;
+        }
+        .capabilities-line{
+            width: 80%;
+            height: 1px;
+            margin: 10px 0px;
+            @include centerObj();
+            background: $mainTextDark;
+        }
+    }
+}
+// end of services page
+// BEGIN OF ABOUT US
+.main-container{
+    .container-header-box-about{
+        @include headerBox(url('/static/main/img/assets/constructionWorker.jpg'));
+        background-size: 100%;
+        background-position-y: 20%;
+        @media screen and (min-width: 1000px) {
+            height: 500px;
+        }
+        .container-title{
+            @include headerBoxText($darkBlue);
+        }
+    }
+    .about-container{
+        background: $backGroundLight;
+        .about-boxs{
+            @media screen and (min-width: 800px) {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: flex-start;
+                align-content: space-around;
+                padding: 60px 0px;
+                .about-box{
+                    width: 400px;
+                }
+                .line-2-deepBlue{
+                    display: none;
+                }
+                .img-box{
+                    height: 275px;
+                    display: flex;
+                    align-items: center;
+                    img{
+                        width: 175px;
+                    }
+                }
+            }
+        }
+        .container-title{
+            padding: 30px 0px 20px;
+            margin-left: 10%;
+        }
+        .about-icon{
+            width: 125px;
+            padding: 30px 0px 10px; 
+            @include centerObj();
+        }
+        .about-subheading{
+            color: $darkBlue;
+            text-align: center;
+            font-weight: 300;
+            font-size: 26px;
+        }
+        .about-text{
+            font-size: 20px;
+            line-height: 130%;
+            padding: 20px 30px 50px;
+            color: $mainTextDark;
+        }
+        .about-cta{
+            @include centerObj();
+            @include mobileBtnSetup($darkBlue, $darkBlue, $backGroundLight);
+            margin-top: 50px;
+            margin-bottom: 50px;
+            width: 70%;
+            max-width: 700px;
+        }
+    }
+}
+.staff-container-4-grid{
+    height: auto;
+    position: relative;
+    padding: 100px 20px 40px;
+    margin: 0;
+    background: $deepBlue;
+    @media screen and (min-width: 950px){
+        padding: 150px 20px 100px;
+    }
+    .custom-shape-divider-top-1621473187 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        svg{
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 80px;
+        }
+        .shape-fill{
+            fill: $backGroundLight;
+        }
+    }
+    .staff-box-header{
+        color: $backGroundLight;
+        margin-left: 10%;
+        padding: 30px 0px;
+        font-weight: 300;
+        font-size: 30px;
+    }
+    .staff-members{
+        @media screen and (min-width: 900px){
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: stretch;
+            align-content: space-between;
+            .staff-member{
+                width: 375px;
+                margin: 0px 20px;
+            }
+        }
+        .staff-member{
+            background: $backGroundDark;
+            margin: 40px 20px;
+            padding: 30px 15px;
+            border-radius: 2px;
+            .staff-name{
+                text-align: center;
+                font-weight: 400;
+                color: $darkBlue;
+            }
+            .staff-position{
+                text-align: center;
+                font-weight: 300;
+            }
+            img{
+                width: 30%;
+                margin: 20px 0px;
+                @include centerObj();
+            }
+            .staff-bio{
+                width: 90%;
+                height: 200px;
+                @include centerObj();
+                padding: 20px 0px;
+                text-align: justify;
+                color: $mainTextDark;
+            }
+            .staff-cta{
+                @include centerObj();
+                @include mobileBtnSetup($deepBlue, $deepBlue, $backGroundDark);
+                margin-top: 20px;
+                margin-bottom: 20px;
+                width: 70%;
+            }
+        }
+    }
+}
+// END OF ABOUT US
+.container-header-box-faqs{
+    @include headerBox(url('/static/main/img/assets/laying-metal.jpg'));
+    background-size: 100%;
+    background-position-y: center;
+    .container-title{
+        @include headerBoxText($darkBlue);
+    }
+}
+.faqs-container{
+    margin: 0;
+    padding: 30px 0px;
+    height: auto;
+    background: $backGroundLight;
+    .faq{
+        background: $darkBlue;
+        height: auto;
+        width: 80%;
+        padding: 40px 20px;
+        margin: 30px 0px;
+        border-radius: 5px;
+        @include centerObj();
+        img{
+            width: 50%;
+            @include centerObj();
+        }
+        .question{
+            color: $backGroundLight;
+            font-weight: 400;
+            font-size: 18px;
+            text-align: center;
+            padding: 15px 0px;
+        }
+        .answer{
+            color: $backGroundLight;
+            padding: 15px 5px 20px;
+            text-align: center;
+        }
+    }
+    @media screen and (min-width: 900px){
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: stretch;
+        align-content: space-between;
+        .faq{
+            width: 400px;
+        }
+    }
+}
+// END OF FAQ PAGE
+// START OF PORTFOLIO PAGE
+.portfolio-container{
+    height: auto;
+    background: $backGroundLight;
+    .container-header-box-portfolio{
+        @include headerBox(url('/static/main/img/assets/metal-working.jpg'));
+        background-size: 100%;
+        background-position-y: center;
+        .container-title{
+            @include headerBoxText($backGroundLight);
+        }
+    }
+    .portfolio-intro-box{
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        h3{
+            padding: 50px 20px;
+            line-height: 28px;
+            font-size: 18px;
+            font-weight: 300;
+            text-align: center;
+            color: $backGroundLight;
+            background: $darkBlue;
+            @media screen and (min-width: 900px){
+                font-size:28px;
+                max-width: 500px;
+                margin-left: 10%;
+                padding: 50px 0px 80px;
+                color: $mainTextDark;
+                background: none;
+                text-align: left;
+            }
+        }
+    }
+    .portfolio-tabs{
+        height: auto;
+        .tab1, .tab2, .tab3, .tab4, .tab5, .tab6, .tab7, .tab8, .tab9, .tab10, .tab11{
+            height: auto;
+            padding: 30px 20px;
+            background: $backGroundLight;
+            img{
+                width: 70%;
+                @include centerObj();
+            }
+            h2{
+                font-size: 22px;
+                width: 90%;
+                text-align: center;
+                @include centerObj();
+                font-weight: 300;
+                color: $mainTextDark;
+            }
+            #showMore{
+                @include portfolioBtn($backGroundLight, $deepBlue);
+            }
+            .spacer{
+                height: 30px;
+            }
+        }
+        .tab2{
+            .flexImgs{
+                display: grid;
+                padding: 30px 0px;
+                grid-template-columns: 35% 35% 35%;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                img{
+                    padding: 15px 0px;
+                }
+            }
+        }
+        .tab3, .tab4, .tab6{
+            .flexImgs2{
+                display: grid;
+                padding: 30px 0px;
+                grid-template-columns: 55% 55%;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                img{
+                    padding: 15px 0px;
+                    &:hover{
+                        scale: 1.2;
+                    }
+                }
+            }
+        }
+        .portfolio-line{
+            width: 70%;
+            height: 1px;
+            @include centerObj();
+            background: $darkBlue;
+        } 
+        #hiddenInfo{
+            display: none;
+            list-style: none;
+            text-align: center;
+            padding: 15px 0px;
+            li{
+                font-weight: 300;
+                font-size: 14px;
+                width: 80%;
+                @include centerObj();
+                color: $mainTextDark;
+                padding: 10px 0px;
+            }
+        }
+        #hiddenInfo.open{
+            display: block;
+        }
+        @media screen and (min-width: 900px){
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-content: space-evenly;
+            background: $backGroundDark;
+            padding: 30px 0px;
+            .tab1, .tab2, .tab3, .tab4, .tab5, .tab6, .tab7, .tab8, .tab9, .tab10, .tab11{
+                max-width: 350px;
+                height: 350px;
+                margin: 10px 0px;
+                overflow: scroll;
+                background: $backGroundLight;
+            }
+            .portfolio-line{
+                display: none;
+            }
+        }
+    }
+}

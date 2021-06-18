@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/main/css/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Our Past Projects</title>
+</head>
+<body>
+<div class="main-container">
+
+    <nav class="mobile-navigation-2">
+
+        <img src="/static/main/img/logos/vestal-logo.png" alt="">
+
+        <!--hidden if width > 1000px-->
+        <div id="navBackground" class="overlay">
+            <img src="/static/main/img/logos/vestal-logo.png" alt="">
+            <!--close nav btn-->
+            <a href="javascript:void(0)" onclick="closeNav()"><i class="material-icons closebtn" onclick="openNav()"> menu_open </i></a>
+            <ul class="mobileNav">
+                <li><a href="/index.html">Home</a></li>
+                <div class="menu-line"></div>
+                <li><a href="/services.html">Services</a></li>
+                <div class="menu-line"></div>
+                <li><a href="/portfolio.html">Past Projects</a></li>
+                <div class="menu-line"></div>
+                <li><a href="/about.html">About Us</a></li>
+                <div class="menu-line"></div>
+                <li><a href="/faqs.html">FAQs</a></li>
+            </ul>
+
+        </div>
+
+    <!-- open nav mobile btn -->
+    <i class="material-icons openbtn" onclick="openNav()"> menu </i>
+    
+    </nav>
+
+    <nav class="desktop-navigation">
+
+        <a href="/index.html"><img src="/static/main/img/logos/vestal-logo.png" alt="vestal logo"></a>
+        <!--hidden if width < 1000px-->
+        <ul class="desktop-nav">
+            <li><a href="/services.html">Services</a></li>
+            <li><a href="/portfolio.html">Past Projects</a></li>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/faqs.html">FAQs</a></li>
+        </ul>
+    </nav>
+
+    <div class="portfolio-container">
+        <!--
+        <div class="container-header-box-portfolio"><h2 class="container-title">Past Projects</h2></div>
+        -->
+        <div class="portfolio-intro-box">
+            <h3>From large construction jobs to those with humble beginnings, Vestal Steel is proud of every project completed.</h3>
+        </div>
+    
+        <div class="portfolio-tabs">
+
+            <div class="tab1">
+                <h2>Sea World of Texas, San Antonio, Texas</h2>
+                <img src="/static/main/img/logos/SeaWorld.png" alt="">
+                <button id="showMore">Project Details +</button>
+                <ul id="hiddenInfo">
+                    <li>Main Entrance</li>
+                    <li>Administration Building</li>
+                    <li>Animal Care Center</li>
+                    <li>Shark Gift Shop</li>
+                    <li>Cap&#39;n Kids World</li>
+                    <li>Marine Mammal Petting Pool Cover</li>
+                    <li>Entry Drive Fountain</li>
+                    <li>Children&#39;s Play Area</li>
+                    <li>Pirate&#39;s Cove</li>
+                    <li>Oaks Employee Lounge</li>
+                    <li>Shamu&#39;s Happy Harbor</li>
+                    <li>Lost Lagoon</li>
+                </ul>
+            </div>
+
+            <div class="portfolio-line"></div>
+
+            <div class="tab2">
+                <h2>Restaurants (New Construction & Renovation/Upgrades)</h2>
+                <div class="flexImgs">
+                    <img src="/static/main/img/logos/mcdonalds.png" alt="mcdonalds logo" class="restaurant">
+                    <img src="/static/main/img/logos/jackitb.png" alt="jack in the box logo" class="restaurant">
+                    <img src="/static/main/img/logos/paesanos.png" alt="paesanos logo" class="restaurant">
+                    <img src="/static/main/img/logos/wendys.png" alt="wendys logo" class="restaurant">
+                    <img src="/static/main/img/logos/starbucks.png" alt="starbucks logo" class="restaurant">
+                    <img src="/static/main/img/logos/carls-jr.png" alt="carls jr logo" class="restaurant">
+                    <img src="/static/main/img/logos/myrons.png" alt="myrons logo" class="restaurant">
+                    <img src="/static/main/img/logos/roaring-fork-updated-landing.png" alt="roaring fork logo" class="restaurant">
+                </div>
+            </div>
+
+            <div class="portfolio-line"></div>
+
+            <div class="tab3">
+                <h2>Canyon West Strip Mall Retail, Lubbock, Texas</h2>
+                <div class="spacer"></div>
+                <div class="flexImgs2">
+                    <img src="/static/main/img/logos/world-market.png" alt="world market logo">
+                    <img src="/static/main/img/logos/ross.png" alt="ross logo">
+                    <img src="/static/main/img/logos/burlington.png" alt="burlington logo">
+                    <img src="/static/main/img/logos/officedepot.png" alt="office depot logo">
+                </div>
+            </div>
+
+            <div class="portfolio-line"></div>
+
+            <div class="tab4">
+                <h2>Institutional Work</h2>
+                <div class="flexImgs2">
+                    <img src="/static/main/img/logos/southsanisd.png" alt="south san isd logo">
+                    <img src="/static/main/img/logos/nisd.png" alt="NISD logo">
+                </div>
+            </div>
+
+            <div class="portfolio-line"></div>
+
+            <div class="tab5">
+                <h2>Six Flags Fiesta Texas, San Antonio, Texas</h2>
+                <img src="/static/main/img/logos/sixflags.png" alt="six flags logo">
+            </div>
+
+            <div class="portfolio-line"></div>
+
+            <div class="tab6">
+                <h2>Convenience Stores</h2>
+                <div class="flexImgs2">
+                    <img src="/static/main/img/logos/valero.png" alt="valero logo">
+                    <img src="/static/main/img/logos/stripes.png" alt="stripes logo">
+                </div>
+
+            </div>
+
+            <div class="portfolio-line"></div>
+
+            <div class="tab7">
+                <h2>San Antonio Airport Parking Structure, San Antonio, Texas</h2>
+                <div class="spacer"></div>
+                <div class="spacer"></div>
+                <img src="/static/main/img/logos/saairport.png" alt="sa airport logo">
+                <div class="spacer"></div>
+            </div>
+
+            <div class="portfolio-line"></div>
+
+            <div class="tab8">
+                <h2>Full Goods Warehouse @ Pearl Brewery, San Antonio, Texas</h2>
+                <img src="/static/main/img/logos/pearl.png" alt="pearl brewery logo">
+            </div>
+
+            <div class="portfolio-line"></div>
+
+            <div class="tab9">
+                <h2>Maranatha Bible Church, Converse, Texas</h2>
+                <div class="spacer"></div>
+                <img src="/static/main/img/logos/maranathachurch.png" alt="maranatha church logo">
+                <div class="spacer"></div>
+            </div>
+
+            <div class="portfolio-line"></div>
+
+            <div class="tab10">
+                <h2>New Administration Building @ Stinson Airport, San Antonio, Texas</h2>
+                <img src="/static/main/img/logos/stinsonAIrport.png" alt="stinson airport logo">
+            </div>
+
+            <div class="portfolio-line"></div>
+
+            <div class="tab11">
+                <div class="spacer"></div>
+                <h2>Petty Ranch Office Building, San Antonio, Texas</h2>
+                <div class="spacer"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer-main">
+
+        <div class="footer-col-1">
+            <img src="/static/main/img/logos/vestal-logo.png" alt="Vestal Logo">
+        </div>
+        <div class="footer-col-2">
+            <h4 class="footer-heading">Menu</h4>
+            <div class="line-0-white"></div>
+            <div class="line-1-white"></div>
+            <ul class="footer-list-main">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/portfolio.html">Past Projects</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/faqs.html">FAQs</a></li>
+            </ul>
+        </div>
+        <div class="footer-col-3">
+            <h4 class="footer-heading">Hours Of Operation</h4>
+            <div class="line-0-white"></div>
+            <div class="line-1-white"></div>
+
+            <p>Monday - Friday <br> 8AM - 5PM</p>
+            <a href="tel:2106514333"><i class="material-icons">call</i>(210)-651-4333</a>
+        </div>
+
+    </footer>
+<script src="/static/main/js/main.js"></script>
+<script src="/static/main/js/portfolio.js"></script>
+</div>
+
+</body>
+</html>

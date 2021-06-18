@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/main/css/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Bespoke Fabrication</title>
+    <meta name="description" content="">
+</head>
+
+<body>
+
+<div class="main-container">
+
+    <nav class="mobile-navigation-2">
+
+        <img src="/static/main/img/logos/vestal-logo.png" alt="">
+
+        <!--hidden if width > 1000px-->
+        <div id="navBackground" class="overlay">
+            <img src="/static/main/img/logos/vestal-logo.png" alt="">
+            <!--close nav btn-->
+            <a href="javascript:void(0)" onclick="closeNav()"><i class="material-icons closebtn" onclick="openNav()"> menu_open </i></a>
+            <ul class="mobileNav">
+                <li><a href="/index.html">Home</a></li>
+                <div class="menu-line"></div>
+                <li><a href="/services.html">Services</a></li>
+                <div class="menu-line"></div>
+                <li><a href="/portfolio.html">Past Projects</a></li>
+                <div class="menu-line"></div>
+                <li><a href="/about.html">About Us</a></li>
+                <div class="menu-line"></div>
+                <li><a href="/faqs.html">FAQs</a></li>
+            </ul>
+
+        </div>
+
+    <!-- open nav mobile btn -->
+    <i class="material-icons openbtn" onclick="openNav()"> menu </i>
+    
+    </nav>
+
+    <nav class="desktop-navigation">
+
+        <a href="/index.html"><img src="/static/main/img/logos/vestal-logo.png" alt="vestal logo"></a>
+        <!--hidden if width < 1000px-->
+        <ul class="desktop-nav">
+            <li><a href="/services.html">Services</a></li>
+            <li><a href="/portfolio.html">Past Projects</a></li>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/faqs.html">FAQs</a></li>
+        </ul>
+    </nav>
+
+    <div class="services-page-container">
+
+        <div class="container-header-box-services"><h2 class="container-title">Turnkey Services</h2></div>
+
+        <div class="quick-jump">
+            <ul class="quick-links">
+                <li><a href="#estimatesBox">Estimates</a></li>
+                <li><a href="#designBox">Design</a></li>
+                <li><a href="#fabricationBox">Fabrication</a></li>
+                <li><a href="#additionalCapabilities">Additional Capabilities</a></li>
+            </ul>
+        </div>
+
+        <div class="main-services">
+
+            <a id="estimatesBox"><div class="left-third">
+                <h2 class="service">Estimates</h2>
+                <p class="service-description">Vestal Steel estimators provide the best understanding of true costs associated with your projects. We welcome your request for an estimate and look forward to exceeding your expectations.</p>
+                <div class="service-icons">
+                    <img src="/static/main/img/icons/money.png" alt="money icon" class="icon left">
+                    <img src="/static/main/img/icons/yes.png" alt="thumbs up icon" class="icon middle">
+                    <img src="/static/main/img/icons/piggy-bank.png" alt="piggy bank icon" class="icon right">
+                </div>
+                <img src="/static/main/img/assets/estimates.jpg" alt="cost estimating" class="service-img">
+                <a href="tel:2106514333" class="service-cta">Call Us</a>
+                <div class="line-2-blue"></div>
+            </div></a>
+
+            <a id="designBox"><div class="middle-third">
+                <h2 class="service">Design</h2>
+                <p class="service-description">Whether you know exactly what you need or could use a little guidance, with over 159 years of combined experience, we will help you reach your desired end result.</p>
+                <div class="service-icons">
+                    <img src="/static/main/img/icons/sketch.png" alt="sketch icon" class="icon left">
+                    <img src="/static/main/img/icons/blueprint.png" alt="blueprint icon" class="icon middle">
+                    <img src="/static/main/img/icons/drawing.png" alt="drawing icon" class="icon right">
+                </div>
+                <img src="/static/main/img/assets/design.jpg" alt="design" class="service-img">
+                <a href="tel:2106514333" class="service-cta">Call Us</a>
+                <div class="line-2-blue"></div>
+            </div></a>
+
+            <a id="fabricationBox"><div class="right-third">
+                <h2 class="service">Fabrication</h2>
+                <p class="service-description">Vestal Steel Specialties, Inc. handles a variety of structural and miscellaneous metal fabrication, including custom forming and welding.</p>
+                <div class="service-icons">
+                    <img src="/static/main/img/icons/saw.png" alt="saw icon" class="icon left">
+                    <img src="/static/main/img/icons/welding.png" alt="welding icon" class="icon middle">
+                    <img src="/static/main/img/icons/clamp.png" alt="clamp icon" class="icon right">
+                </div>
+                <img src="/static/main/img/assets/fabrication.jpg" alt="steel fabrication" class="service-img">
+                <a href="tel:2106514333" class="service-cta">Call Us</a>
+            </div></a>
+
+        </div>
+
+    </div>
+    <div id="additionalCapabilities">
+        <div class="capabilities-header"><h2>Additional Capabilities</h2></div>
+        <ul class="capabilities">
+            <li>Power Shearing - 3/8” x 10’</li>
+            <div class="capabilities-line"></div>
+            <li>Power Forming - 3/8" x 10'</li>
+            <div class="capabilities-line"></div>
+            <li>Headed Concrete Anchors</li>
+            <div class="capabilities-line"></div>
+            <li>Plate Rolling to 3/16" x 8'</li>
+            <div class="capabilities-line"></div>
+            <li>Pipe Bending to 3" stud</li>
+            <div class="capabilities-line"></div>
+            <li>CNC Cutting</li>
+            <div class="capabilities-line"></div>
+            <li>Two crane bays with two overhead cranes in each bay *10-ton capacity*</li>
+            <div class="capabilities-line"></div>
+            <li>Four 6,0000 forklifts and One 18,000 forklift</li>
+        </ul>
+    </div>
+
+    <footer class="footer-main-2">
+
+        <div class="footer-col-1">
+            <img src="/static/main/img/logos/vestal-logo.png" alt="Vestal Logo">
+        </div>
+        <div class="footer-col-2">
+            <h4 class="footer-heading">Menu</h4>
+            <div class="line-0-blue"></div>
+            <div class="line-1-blue"></div>
+            <ul class="footer-list-main">
+                <li><a href=" /index.html">Home</a></li>
+                <li><a href=" /services.html">Services</a></li>
+                <li><a href=" /portfolio.html">Past Projects</a></li>
+                <li><a href=" /about.html">About Us</a></li>
+                <li><a href=" /faqs.html">FAQs</a></li>
+            </ul>
+        </div>
+        <div class="footer-col-3">
+            <h4 class="footer-heading">Hours Of Operation</h4>
+            <div class="line-0-blue"></div>
+            <div class="line-1-blue"></div>
+
+            <p>Monday - Friday <br> 8AM - 5PM</p>
+            <a href="tel:2106514333"><i class="material-icons">call</i>(210)-651-4333</a>
+        </div>
+
+    </footer>
+
+</div>
+<script src="/static/main/js/main.js"></script>
+</body>
+</html>
