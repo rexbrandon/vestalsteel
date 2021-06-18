@@ -232,7 +232,7 @@ TO EXTEND OR REUSE STYLES
 .desktop-navigation {
   display: none;
   position: relative;
-  background: #005cb9;
+  background: #fbfcfe;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -261,12 +261,13 @@ TO EXTEND OR REUSE STYLES
 
 .desktop-navigation .desktop-nav li a {
   text-decoration: none;
-  color: #fbfcfe;
+  color: black;
+  font-weight: 300;
   font-size: 20px;
 }
 
 .desktop-navigation .desktop-nav li a:hover {
-  color: #fff;
+  color: #005cb9;
 }
 
 .desktop-navigation img {
@@ -590,14 +591,15 @@ TO EXTEND OR REUSE STYLES
   }
 }
 
-.footer-main .footer-col-1, .footer-main-2 .footer-col-1, .footer-main .footer-col-2, .footer-main-2 .footer-col-2, .footer-main .footer-col-3, .footer-main-2 .footer-col-3 {
+.footer-main .footer-col-1, .footer-main-2 .footer-col-1, .footer-main .footer-col-2, .footer-main-2 .footer-col-2, .footer-main .footer-col-3, .footer-main-2 .footer-col-3, .footer-main .footer-col-4, .footer-main-2 .footer-col-4 {
   min-width: 300px;
   margin: 30px 20px;
 }
 
-.footer-main .footer-col-1 .footer-heading, .footer-main-2 .footer-col-1 .footer-heading, .footer-main .footer-col-2 .footer-heading, .footer-main-2 .footer-col-2 .footer-heading, .footer-main .footer-col-3 .footer-heading, .footer-main-2 .footer-col-3 .footer-heading {
+.footer-main .footer-col-1 .footer-heading, .footer-main-2 .footer-col-1 .footer-heading, .footer-main .footer-col-2 .footer-heading, .footer-main-2 .footer-col-2 .footer-heading, .footer-main .footer-col-3 .footer-heading, .footer-main-2 .footer-col-3 .footer-heading, .footer-main .footer-col-4 .footer-heading, .footer-main-2 .footer-col-4 .footer-heading {
   color: #fbfcfe;
   font-size: 22px;
+  font-weight: 400;
   padding: 10px 15px;
 }
 
@@ -627,7 +629,7 @@ TO EXTEND OR REUSE STYLES
 .footer-main a, .footer-main-2 a {
   color: #fbfcfe;
   text-decoration: none;
-  padding-left: 10px;
+  margin-left: 10%;
   font-size: 20px;
 }
 
@@ -640,7 +642,7 @@ TO EXTEND OR REUSE STYLES
   background: #fbfcfe;
 }
 
-.footer-main-2 .footer-col-1 .footer-heading, .footer-main-2 .footer-col-2 .footer-heading, .footer-main-2 .footer-col-3 .footer-heading {
+.footer-main-2 .footer-col-1 .footer-heading, .footer-main-2 .footer-col-2 .footer-heading, .footer-main-2 .footer-col-3 .footer-heading, .footer-main-2 .footer-col-4 .footer-heading {
   color: #13375c;
 }
 
@@ -660,7 +662,7 @@ TO EXTEND OR REUSE STYLES
 .services-page-container .container-header-box-services {
   width: 100%;
   height: 250px;
-  background: #005cb9;
+  background: #13375c;
 }
 
 .services-page-container .container-header-box-services .container-title {
@@ -748,26 +750,32 @@ TO EXTEND OR REUSE STYLES
       flex-flow: wrap;
 }
 
-.services-page-container .left-third .service-icons .icon, .services-page-container .middle-third .service-icons .icon, .services-page-container .right-third .service-icons .icon {
+.services-page-container .left-third .service-icons .imgBox, .services-page-container .middle-third .service-icons .imgBox, .services-page-container .right-third .service-icons .imgBox {
   width: 30px;
-  padding: 13px;
+  height: 30px;
+  margin: 10px 0px 20px;
 }
 
-.services-page-container .left-third .service-icons .left, .services-page-container .left-third .service-icons .middle, .services-page-container .left-third .service-icons .right, .services-page-container .middle-third .service-icons .left, .services-page-container .middle-third .service-icons .middle, .services-page-container .middle-third .service-icons .right, .services-page-container .right-third .service-icons .left, .services-page-container .right-third .service-icons .middle, .services-page-container .right-third .service-icons .right {
+.services-page-container .left-third .service-icons .imgBox .icon, .services-page-container .middle-third .service-icons .imgBox .icon, .services-page-container .right-third .service-icons .imgBox .icon {
+  width: 100%;
+  padding: 10px;
+}
+
+.services-page-container .left-third .service-icons .imgBox .left, .services-page-container .left-third .service-icons .imgBox .middle, .services-page-container .left-third .service-icons .imgBox .right, .services-page-container .middle-third .service-icons .imgBox .left, .services-page-container .middle-third .service-icons .imgBox .middle, .services-page-container .middle-third .service-icons .imgBox .right, .services-page-container .right-third .service-icons .imgBox .left, .services-page-container .right-third .service-icons .imgBox .middle, .services-page-container .right-third .service-icons .imgBox .right {
   border-radius: 5px;
 }
 
-.services-page-container .left-third .service-icons .left, .services-page-container .middle-third .service-icons .left, .services-page-container .right-third .service-icons .left {
+.services-page-container .left-third .service-icons .imgBox .left, .services-page-container .middle-third .service-icons .imgBox .left, .services-page-container .right-third .service-icons .imgBox .left {
   background: #CAEBF2;
   border: solid 1px #13375c;
 }
 
-.services-page-container .left-third .service-icons .middle, .services-page-container .middle-third .service-icons .middle, .services-page-container .right-third .service-icons .middle {
+.services-page-container .left-third .service-icons .imgBox .middle, .services-page-container .middle-third .service-icons .imgBox .middle, .services-page-container .right-third .service-icons .imgBox .middle {
   background: #EFEFEF;
   border: solid 1px #005cb9;
 }
 
-.services-page-container .left-third .service-icons .right, .services-page-container .middle-third .service-icons .right, .services-page-container .right-third .service-icons .right {
+.services-page-container .left-third .service-icons .imgBox .right, .services-page-container .middle-third .service-icons .imgBox .right, .services-page-container .right-third .service-icons .imgBox .right {
   background: #A9A9A9;
   border: solid 1px #13375c;
 }
@@ -1190,7 +1198,6 @@ TO EXTEND OR REUSE STYLES
 }
 
 .portfolio-container {
-  height: auto;
   background: #fbfcfe;
 }
 
@@ -1248,11 +1255,10 @@ TO EXTEND OR REUSE STYLES
 }
 
 .portfolio-container .portfolio-tabs {
-  height: auto;
+  margin: 80px 0px;
 }
 
 .portfolio-container .portfolio-tabs .tab1, .portfolio-container .portfolio-tabs .tab2, .portfolio-container .portfolio-tabs .tab3, .portfolio-container .portfolio-tabs .tab4, .portfolio-container .portfolio-tabs .tab5, .portfolio-container .portfolio-tabs .tab6, .portfolio-container .portfolio-tabs .tab7, .portfolio-container .portfolio-tabs .tab8, .portfolio-container .portfolio-tabs .tab9, .portfolio-container .portfolio-tabs .tab10, .portfolio-container .portfolio-tabs .tab11 {
-  height: auto;
   padding: 30px 20px;
   background: #fbfcfe;
 }
