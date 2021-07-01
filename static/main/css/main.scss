@@ -185,7 +185,7 @@ $standardPadding: 20px;
 .line-2-deepBlue{
     @include line-2();
     @include centerObj();
-    background: $deepBlue;
+    background: $darkBlue;
 }
 .line-3-white{
     @include line-2();
@@ -206,12 +206,15 @@ $standardPadding: 20px;
     @media screen and (min-width: 1000px) {
         display: none;
     }
-    img{
-        width: 50px;
-        display: block;
-        position: absolute;
-        top: 10px;
-        left: 10px;
+    .nav-name{
+        color: $backGroundLight;
+        font-weight: 300;
+        font-size: 22px;
+        text-align: center;
+        @media screen and (max-width: 350px){
+            font-size:16px;
+            margin-top: 5px;
+        }
     }
     .overlay{
         height: 100%;
@@ -273,6 +276,9 @@ $standardPadding: 20px;
     .openbtn{
         color: $darkBlue;
     }
+    .nav-name{
+        color: $darkBlue;
+    }
 }
 
 // END OF MOBILE NAV
@@ -285,6 +291,16 @@ $standardPadding: 20px;
     justify-content: flex-end;
     height: 100px;
     width: 100%;
+    a{
+        text-decoration: none;
+        .nav-name{
+            color: $darkBlue;
+            position: absolute;
+            left: 50px;
+            top: 30px;
+            font-weight: 400;
+        }
+    }
     .desktop-nav{
         display: flex;
         flex-direction: row;
@@ -299,16 +315,10 @@ $standardPadding: 20px;
                 font-weight: 300;
                 font-size: 20px;
                 &:hover{
-                    color: $deepBlue;
+                    color: $darkBlue;
                 }
             }
         }
-    }
-    img{
-        position: absolute;
-        left: 15px;
-        top: 15px;
-        width: 70px;
     }
     @media screen and (min-width: 1000px) {
         display: flex;
@@ -346,8 +356,8 @@ $standardPadding: 20px;
             color: $backGroundLight
         }
         a{
-            color: $deepBlue;
-            background: $backGroundLight;
+            color: $backGroundLight;
+            background: $darkBlue;
             border-radius: 3px;
             text-decoration: none;
             font-size: 20px;
@@ -368,7 +378,7 @@ $standardPadding: 20px;
 .client-overview{
     height: auto;
     padding: 60px 0px 80px;
-    background: $deepBlue;
+    background: $darkBlue;
     @media screen and (min-width: 1200px) {
         padding: 100px 0px 140px;
     }
@@ -434,7 +444,7 @@ $standardPadding: 20px;
     }
     .services-heading{
         margin-left: 10%;
-        color: $deepBlue;
+        color: $darkBlue;
         padding-bottom: 20px;
         font-weight: 400;
         font-size: 28px;
@@ -444,7 +454,7 @@ $standardPadding: 20px;
         margin-left: 10%;
         margin-right: 20px;
         padding-bottom: 60px;
-        color: $deepBlue;
+        color: $darkBlue;
         font-size: 22px;
         font-weight: 300;
     }
@@ -463,7 +473,7 @@ $standardPadding: 20px;
             }
             .info-btn {
                 @include centerObj();
-                @include mobileBtnSetup(none, $deepBlue, $backGroundLight);
+                @include mobileBtnSetup(none, $darkBlue, $backGroundLight);
                 margin-top: 20px;
             }
             .service-img{
@@ -507,14 +517,14 @@ $standardPadding: 20px;
     }
 
     .custom-shape-divider-top-1623446036 .shape-fill {
-        fill: $deepBlue;
+        fill: $darkBlue;
 }
 }
 //footer 
 .footer-main{
     height: auto;
     padding: 80px 0px 80px;
-    background: $deepBlue;
+    background: $darkBlue;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -544,8 +554,8 @@ $standardPadding: 20px;
         }
     }
     img{
-        width: 80px;
-        margin-left: 20px;
+        width: 120px;
+        margin-left: 10%;
     }
     p{
         color: $backGroundLight;
@@ -633,43 +643,9 @@ $standardPadding: 20px;
             padding: 10px 20px;
             font-weight: 300;
         }
-        .service-icons{
-            width: 90%;
-            height: auto;
-            margin: 20px 0px;
-            @include centerObj();
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            flex-flow: wrap;
-            .imgBox{
-                width: 30px;
-                height: 30px;
-                margin: 10px 0px 20px;
-                .icon{
-                    width: 100%;
-                    padding: 10px;
-                }
-                .left, .middle, .right{
-                    border-radius: 5px;
-                }
-                .left{
-                    background: $emphasisBright;
-                    border: solid 1px $darkBlue;
-                }
-                .middle{
-                    background: $backGroundDark;
-                    border: solid 1px $deepBlue;
-                }
-                .right{
-                    background: $headerTextDark;
-                    border: solid 1px $darkBlue;
-                }
-            }
-        }
         .service-cta{
             @include centerObj();
-            @include mobileBtnSetup($deepBlue, $deepBlue, $backGroundLight);
+            @include mobileBtnSetup($darkBlue, $darkBlue, $backGroundLight);
             margin-top: 20px;
             margin-bottom: 50px;
             width: 70%;
@@ -686,11 +662,18 @@ $standardPadding: 20px;
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-around;
-            align-items: center;
+            align-items: flex-start;
             align-content: space-around;
             padding: 60px 0px;
             .left-third, .middle-third, .right-third{
                 width: 350px;
+                display: flex;
+                align-items: center;
+                div{
+                    height: 175px;
+                    display: flex;
+                    align-items: flex-start;
+                }
                 .service-cta{
                     display: none;
                 }
@@ -703,7 +686,7 @@ $standardPadding: 20px;
 }
 #additionalCapabilities{
     padding: 20px 10px 40px; 
-    background: $deepBlue;
+    background: $darkBlue;
     .capabilities-header{
         text-align: center;
         h2{
@@ -814,7 +797,7 @@ $standardPadding: 20px;
     position: relative;
     padding: 100px 20px 40px;
     margin: 0;
-    background: $deepBlue;
+    background: $darkBlue;
     @media screen and (min-width: 950px){
         padding: 150px 20px 100px;
     }
@@ -849,17 +832,21 @@ $standardPadding: 20px;
             flex-wrap: wrap;
             justify-content: space-around;
             align-items: stretch;
-            align-content: space-between;
+            align-content: space-evenly;
             .staff-member{
                 width: 375px;
                 margin: 0px 20px;
+                .staff-bio{
+                    height: 225px;
+                }
             }
         }
         .staff-member{
             background: $backGroundDark;
-            margin: 40px 20px;
-            padding: 30px 15px;
+            margin: 40px 10px;
+            padding: 50px 15px;
             border-radius: 2px;
+            height: auto;
             .staff-name{
                 text-align: center;
                 font-weight: 400;
@@ -876,7 +863,6 @@ $standardPadding: 20px;
             }
             .staff-bio{
                 width: 90%;
-                height: 200px;
                 @include centerObj();
                 padding: 20px 0px;
                 text-align: justify;
@@ -884,7 +870,7 @@ $standardPadding: 20px;
             }
             .staff-cta{
                 @include centerObj();
-                @include mobileBtnSetup($deepBlue, $deepBlue, $backGroundDark);
+                @include mobileBtnSetup($darkBlue, $darkBlue, $backGroundDark);
                 margin-top: 20px;
                 margin-bottom: 20px;
                 width: 70%;
@@ -893,57 +879,6 @@ $standardPadding: 20px;
     }
 }
 // END OF ABOUT US
-.container-header-box-faqs{
-    @include headerBox(url('/static/main/img/assets/laying-metal.jpg'));
-    background-size: 100%;
-    background-position-y: center;
-    .container-title{
-        @include headerBoxText($darkBlue);
-    }
-}
-.faqs-container{
-    margin: 0;
-    padding: 30px 0px;
-    height: auto;
-    background: $backGroundLight;
-    .faq{
-        background: $darkBlue;
-        height: auto;
-        width: 80%;
-        padding: 40px 20px;
-        margin: 30px 0px;
-        border-radius: 5px;
-        @include centerObj();
-        img{
-            width: 50%;
-            @include centerObj();
-        }
-        .question{
-            color: $backGroundLight;
-            font-weight: 400;
-            font-size: 18px;
-            text-align: center;
-            padding: 15px 0px;
-        }
-        .answer{
-            color: $backGroundLight;
-            padding: 15px 5px 20px;
-            text-align: center;
-        }
-    }
-    @media screen and (min-width: 900px){
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: stretch;
-        align-content: space-between;
-        .faq{
-            width: 400px;
-        }
-    }
-}
-// END OF FAQ PAGE
 // START OF PORTFOLIO PAGE
 .portfolio-container{
     background: $backGroundLight;
@@ -961,27 +896,66 @@ $standardPadding: 20px;
         justify-content: center;
         align-content: center;
         flex-direction: column;
+        background: $darkBlue;
         h3{
-            padding: 50px 20px;
-            line-height: 28px;
-            font-size: 18px;
+            padding: 50px 20px 0px;
+            font-size: 22px;
             font-weight: 300;
             text-align: center;
             color: $backGroundLight;
-            background: $darkBlue;
             @media screen and (min-width: 900px){
                 font-size:28px;
                 max-width: 500px;
                 margin-left: 10%;
-                padding: 50px 0px 80px;
-                color: $mainTextDark;
-                background: none;
+                padding: 50px 0px 0px;
                 text-align: left;
             }
         }
     }
+    .portfolioPictures{
+        padding: 80px 0px;
+        display: flex;
+        justify-content: center;
+        background: $darkBlue;
+        .portfolioGallery{
+            line-height:0;
+            -webkit-column-gap:10px; /* give it a 5px gap between columns */
+            -moz-column-gap:10px;
+            -moz-column-count:    4;
+            -webkit-column-count: 4;
+            column-count:         4;
+            column-gap:10px;
+            justify-content: center;
+            width: 90%;
+            max-width: 1200px;
+            @include centerObj();
+            @media screen and (max-width: 1200px){
+            }
+            @media screen and (max-width: 1000px){
+                -moz-column-count:    3;
+                -webkit-column-count: 3;
+                column-count:         3;            
+            }
+            @media screen and (max-width: 800px){
+                -moz-column-count:    2;
+                -webkit-column-count: 2;
+                column-count:         2;
+            }
+            @media screen and (max-width: 400px){
+                -moz-column-count:    1;
+                -webkit-column-count: 1;
+                column-count:         1;
+            }
+            img{
+                width: 100% !important;
+                height: auto !important;
+                margin-bottom:10px; /* to match column gap */
+            }
+        }
+    }
     .portfolio-tabs{
-        margin: 80px 0px;
+        height: auto;
+        padding: 80px 0px;
         .tab1, .tab2, .tab3, .tab4, .tab5, .tab6, .tab7, .tab8, .tab9, .tab10, .tab11{
             padding: 30px 20px;
             background: $backGroundLight;
@@ -998,7 +972,7 @@ $standardPadding: 20px;
                 color: $mainTextDark;
             }
             #showMore{
-                @include portfolioBtn($backGroundLight, $deepBlue);
+                @include portfolioBtn($backGroundLight, $darkBlue);
             }
             .spacer{
                 height: 30px;
