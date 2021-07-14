@@ -648,6 +648,13 @@ TO EXTEND OR REUSE STYLES
   font-size: 20px;
 }
 
+.footer-main .direction, .footer-main-2 .direction {
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 7px;
+  border-bottom: 1px solid #fbfcfe;
+}
+
 .footer-main i, .footer-main-2 i {
   color: #fbfcfe;
   margin-top: 5px;

@@ -569,6 +569,12 @@ $standardPadding: 20px;
         margin-left: 10%;
         font-size: 20px;
     }
+    .direction{
+        font-size: 18px;
+        font-weight: 300;
+        margin-bottom: 7px;
+        border-bottom: 1px solid $backGroundLight;
+    }
     i{
         color: $backGroundLight;
         margin-top: 5px;
