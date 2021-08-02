@@ -573,7 +573,11 @@ $standardPadding: 20px;
         font-size: 18px;
         font-weight: 300;
         margin-bottom: 7px;
+        padding-top: 30px;
         border-bottom: 1px solid $backGroundLight;
+        &:hover{
+            font-weight: 400;
+        }
     }
     i{
         color: $backGroundLight;

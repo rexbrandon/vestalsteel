@@ -652,7 +652,12 @@ TO EXTEND OR REUSE STYLES
   font-size: 18px;
   font-weight: 300;
   margin-bottom: 7px;
+  padding-top: 30px;
   border-bottom: 1px solid #fbfcfe;
+}
+
+.footer-main .direction:hover, .footer-main-2 .direction:hover {
+  font-weight: 400;
 }
 
 .footer-main i, .footer-main-2 i {
