@@ -652,7 +652,7 @@ TO EXTEND OR REUSE STYLES
   font-size: 18px;
   font-weight: 300;
   margin-bottom: 7px;
-  padding-top: 30px;
+  line-height: 28px;
   border-bottom: 1px solid #fbfcfe;
 }
 
@@ -679,6 +679,10 @@ TO EXTEND OR REUSE STYLES
 
 .footer-main-2 p, .footer-main-2 a, .footer-main-2 i {
   color: #13375c;
+}
+
+.footer-main-2 .direction {
+  border-bottom: 1px solid #13375c;
 }
 
 .services-page-container {
